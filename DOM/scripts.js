@@ -14,9 +14,10 @@ btn.appendChild(text);
 document.body.appendChild(btn);
 
 //causes alert message to pop up when clicking on button from HTML
-function clickHere() {
-    window.alert("Enter some text...");
-}
+button.addEventListener('click', function() {
+    var field = document.getElementById("myTextBox").value;
+    alert(field);
+});
 
 //causes background color to change when mouseover and mouseout
 document.getElementById("color").addEventListener("mouseover", mouseOver);
@@ -38,19 +39,70 @@ function mouseOut() {
         for (var i = 0; i < 6; i++ ) {
             color += letters[Math.floor(Math.random() * 16)];
         }
+        return color;
     };
 
     //should make random colors happen on click
-function clickedColor() {
-    var newColor = getRandomColor()
-    var p = document.getElementById("clickedText");
-    p.style.color=newColor;
+    var clickedText = document.getElementById("clickedText");
+    clickedText.onclick= function () {
+        this.style.color = getRandomColor();
      
 };
 
 //adds name to div
-function addName() {
-    var span = document.createElement("span");
+var btn2 = document.createElement("button");
+btn2.id = btn2;
+btn2.innerHTML = "My name";
+btn2.style.margin = '20px';
+btn2.style.display = "inline";
+document.body.appendChild(btn2);
+
+//div
+var myName = document.createElement("div");
+myName.id = myName;
+document.body.appendChild(myName);
+
+//function
+btn2.onclick = function () {
+    var nameSpan = document.createElement('span');
+    nameSpan.id = nameSpan;
+    nameSpan.innerHTML = "Rachel Eiting";
+document.getElementById(myName).appendChild(nameSpan);
 }
 
+//array of friends
+var friends = ["Wayne", "Kwinn", "Connie", "Sarah", "Davida", "Bob", "Rob", "Job", "Amanda", "Josh"];
+var friendButton = document.getElementById('friends');
+friendButton.addEventListener('click', function() {
+    aListOfFriends();
+    // var newLI = document.createElement("LI");
+    // displayFriendList = document.getElementById("listFriends");
+
 });
+
+
+//a function here that is going to do
+// 1. pop or shift our friends list
+// 2. displayFriendList = document.getElementById("listFriends");
+// 3. newLI.appendChild(newContent);
+// 4. displayFriendList.appendChild(newLI);
+function aListOfFriends() {
+    var aFriend = friends.pop();
+        var newLI = document.createElement("LI");
+        displayFriendList = document.getElementById("listFriends");
+        newContent = document.createTextNode(aFriend);
+        newLI.appendChild(newContent);
+        displayFriendList.appendChild(newLI);
+
+}
+
+
+
+
+
+    
+});
+
+
+
+    
