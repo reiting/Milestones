@@ -49,7 +49,7 @@ function mouseOut() {
      
 };
 
-//adds name to div
+//button for name
 var btn2 = document.createElement("button");
 btn2.id = btn2;
 btn2.innerHTML = "My name";
@@ -88,11 +88,11 @@ friendButton.addEventListener('click', function() {
 // 4. displayFriendList.appendChild(newLI);
 function aListOfFriends() {
     var aFriend = friends.pop();
-        var newLI = document.createElement("LI");
-        displayFriendList = document.getElementById("listFriends");
-        newContent = document.createTextNode(aFriend);
-        newLI.appendChild(newContent);
-        displayFriendList.appendChild(newLI);
+    var newLI = document.createElement("LI");
+    displayFriendList = document.getElementById("listFriends");
+    newContent = document.createTextNode(aFriend);
+    newLI.appendChild(newContent);
+    displayFriendList.appendChild(newLI);
 
 }
 
