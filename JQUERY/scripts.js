@@ -41,23 +41,33 @@ $('#clickedText').click(function() {
 //add div NUMBER 5
 $('body').append('<div>');
 
-//add name to span NUMBER 5function createniceMessageButton() 
+//add name to span NUMBER 5 function createniceMessageButton() 
 //add div
 function nameDiv() {
     var $div = $('<div />', {
       type: 'div',
-      text: "Name Div",
-      id: 'div_name'
+      id: 'divName'
     }).click(nameDiv);
+    $("body").append($div);
     return $div;
-    $("body").append(div_name);
+    
 }
+
+function nameSpan () {
+  var $span = $("<span />", {
+    type: "span",
+    text: "Rachel Eiting!!!!!!!",
+    id: 'nameSpan',
+  });
+  return $span;
+  }
   
 //add button
 $(function () {
   function nameMessage() {
 
-    $("body").append("Rachel Eiting");
+    var div = nameDiv();
+    $(div).append(nameSpan());
   }
   function createnameMessageButton() {
     var $btn = $('<button />', {
